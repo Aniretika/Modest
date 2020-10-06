@@ -1,0 +1,222 @@
+                    /*
+test-repaired
+*/
+                    
+                    @import "_custom";
+                    @import "_include-media";
+                    @import "_header";
+                    @import "_mixins";
+                    @import "_style";
+                    * {
+                        box-sizing: border-box;
+                    }
+                    
+                    body {
+                        width: 100%;
+                    }
+                    
+                    p {
+                        line-height: 26px;
+                    }
+                    
+                    h2 {
+                        text-transform: uppercase;
+                        color: $headings-color;
+                        position: relative;
+                        padding-left: 24px;
+                        margin-bottom: $heading-down-margin;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            border-left: 10px solid $headings-border-color;
+                            width: 10px;
+                            height: 100%;
+                            left: 0;
+                        }
+                    }
+                    
+                    h4 {
+                        font: 600 18px 'Quattrocento Sans', sans-serif;
+                        color: #292f36;
+                        text-transform: uppercase;
+                        padding-bottom: 7px;
+                    }
+                    
+                    .logo {
+                        background: url(../../images/logo-modest.png);
+                        width: 99px;
+                        height: 19px;
+                    }
+                    
+                    .header .navbar-nav {
+                        @media (max-width: 992px) {
+                            padding-top: 30px;
+                        }
+                        li {
+                            @media (max-width: 992px) {
+                                padding-bottom: 30px;
+                            }
+                            &.active {
+                                a {
+                                    border: 2px solid $nav-active;
+                                    color: $nav-active;
+                                    @media (max-width: 992px) {
+                                        border: none;
+                                        border-bottom: 2px solid $nav-active;
+                                        color: $nav-active;
+                                    }
+                                }
+                            }
+                            a {
+                                color: $nav-color;
+                                text-transform: uppercase;
+                                font-weight: 600;
+                                border: 2px solid transparent;
+                                @include font-size(12px);
+                                padding: 0 10px;
+                                line-height: 26px;
+                                border-radius: 4px;
+                                margin-left: 16px;
+                                @media (max-width: 992px) {
+                                    text-align: center;
+                                    @include font-size(20px);
+                                    line-height: 30px;
+                                    border: none;
+                                    border-bottom: 2px solid transparent;
+                                }
+                                &:hover {
+                                    border: 2px solid $nav-border-color;
+                                    @media (max-width: 992px) {
+                                        border: none;
+                                        border-bottom: 2px solid $nav-border-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .header {
+                        .navbar-expand-lg {
+                            width: 100%;
+                            background: $header-color;
+                        }
+                        .burger-menu {
+                            svg {
+                                fill: $white;
+                                width: 2.5rem;
+                                height: 3rem;
+                            }
+                        }
+                    }
+                    
+                    .navbar-toggler {
+                        border: 1px solid $white;
+                        &.focus {
+                            border: none;
+                        }
+                    }
+                    
+                    .carousel-indicators {
+                        justify-content: flex-end;
+                        @media (max-width: 992px) {
+                            margin-right: 5%;
+                        }
+                        li {
+                            border: 2px solid $white;
+                            opacity: 1;
+                            border-radius: 50%;
+                            width: 7px;
+                            height: 7px;
+                            background: none;
+                        }
+                        .active {
+                            background: $white;
+                        }
+                    }
+                    
+                    .carousel-width {
+                        width: 1140px;
+                    }
+                    
+                    .carousel-caption {
+                        text-align: start;
+                        top: 40%;
+                        bottom: 0;
+                        h5 {
+                            color: $white;
+                        }
+                        p {
+                            width: 50%;
+                        }
+                        .btn.focus,
+                        .btn:focus {
+                            box-shadow: none;
+                        }
+                        .btn-ocean {
+                            text-transform: uppercase;
+                            color: #ffff;
+                            border: 2px solid $white;
+                            &:hover {
+                                background: $nav-active;
+                                border: 2px solid $nav-active;
+                            }
+                        }
+                    }
+                    
+                    .data {
+                        padding-top: $container-up-padding;
+                    }
+                    
+                    .social-networks ul {
+                        padding-top: 22px;
+                        display: flex;
+                        justify-content: flex-start;
+                        a {
+                            text-decoration: none;
+                            margin-right: 1px;
+                            padding: 19px;
+                            background: #c8cdd0;
+                            &:hover {
+                                background: #d0d5d9;
+                            }
+                        }
+                        .facebook::before {
+                            @include networks("\ea90");
+                        }
+                        .twitter::before {
+                            @include networks("\ea96");
+                        }
+                        .google::before {
+                            @include networks("\ea8a");
+                        }
+                        .dribbble::before {
+                            @include networks("\eaa7");
+                        }
+                        .behance::before {
+                            @include networks("\eaa8");
+                        }
+                    }
+                    
+                    .advantages-wrapper ul {
+                        display: flex;
+                        flex-direction: column;
+                        li {
+                            list-style-type: none;
+                            padding-left: 13px;
+                            .num {
+                                color: #fff;
+                                font: 600 20px 'Quattrocento Sans', sans-serif;
+                                position: relative;
+                                right: 69px;
+                                top: 35px;
+                                padding: 13px 15px;
+                                background: #23b7a4;
+                            }
+                            .list {
+                                p {
+                                    font: 16px 'Open Sans', sans-serif;
+                                    color: #8d8f92;
+                                }
+                            }
+                        }
+                    }
